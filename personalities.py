@@ -1,5 +1,5 @@
-import hdrfunclib.hdr_decorators as hd
-import hdrfunclib.hdr_funcs as hf
+import personality.hdr_decorators as hd
+import personality.hdr_funcs as hf
 
 
 # from: sandbox/tada-cli/personalities/*/*.yaml

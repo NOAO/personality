@@ -5,8 +5,8 @@ from pprint import pformat, pprint
 # External packages
 import astropy.io.fits as pyfits
 # Local packages
-from hdrfunclib.personalities import personalities
-import hdrfunclib.hdr_decorators as hd
+from personality.personalities import personalities
+import personality.hdr_decorators as hd
 
 class NoPersonalityName(Exception):
     pass
@@ -48,7 +48,7 @@ class Personality():
             pers_names = [pn for (pn,pd) in personalities]
             msg = ('Personality name ("{}") not found.  Available personalties'
                    ' are: {}.  '
-                   ' To add more, see hdrfunclib/personalities'
+                   ' To add more, see personality/personalities'
                    ).format(persName, ', '.join(pers_names))
             raise NoPersonalityName(msg)
 
