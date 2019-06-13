@@ -20,9 +20,9 @@ files.
 ## Personality Content
 Personalities contain three sections: "options", "calchdr", and "params":
 1. OPTIONS are name/value pairs to be added to HDU[0]
-2. CALCHDR contain an order list of /hdrfunc/ that should be applied
+1. CALCHDR contain an order list of /hdrfunc/ that should be applied
    to the Dome header to get an Archive header.
-3. PARAMS are specialized controls used by ingest.  Mostly not used.
+1. PARAMS are specialized controls used by ingest.  Mostly not used.
 
 
 ## How a Personality is Applied to a FITS File Header
@@ -38,9 +38,8 @@ exist in any HDU, then HDU-0 is used.
 Operations may need to change the FITS Ingest process in response to
 new (or changed) FITS header content coming from the Domes.  There are
 two files OPS is intended to modify:
-
 1. `hdr_funcs.py`
-2. `personalities.py`
+1. `personalities.py`
 
 Each of these files contains comments describing how they should be
 changed. Generally, OPS will only add a section to `personalities.py`
