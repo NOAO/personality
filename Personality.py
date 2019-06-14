@@ -5,34 +5,35 @@ from pprint import pformat, pprint
 # External packages
 import astropy.io.fits as pyfits
 # Local packages
-from personality.personalities import personalities
-import personality.hdr_decorators as hd
+#!from personality.personalities import personalities
+#!import personality.hdr_decorators as hd
+from personalities import personalities
+import hdr_decorators as hd
+
+def get_personality_names():
+    return [persName for (persName,persDict) in personalities]
 
 class NoPersonalityName(Exception):
     pass
     
-def flat_hdudict(hdudict_list):
-    """Combine key/value pairs from all HDUs into a single dict (returned).
-    If key appears in multiple HDUs, first one wins."""
-    hdudict = dict()
-    for hdict in hdudict_list:
-        for k,v in hdict.items():
-            if k not in hdudict:
-                hdudict[k] = v
-    return hdudict
+#!def flat_hdudict(hdudict_list):
+#!    """Combine key/value pairs from all HDUs into a single dict (returned).
+#!    If key appears in multiple HDUs, first one wins."""
+#!    hdudict = dict()
+#!    for hdict in hdudict_list:
+#!        for k,v in hdict.items():
+#!            if k not in hdudict:
+#!                hdudict[k] = v
+#!    return hdudict
 
 class Personality():
     
     def __init__(self, persName):
         # Raise exception if there is a duplicate Personality Name
-        seen = set()
-        dupes = set()
-        if len(dict(personalities)) != len(personalities):
-            for persName,persdict in personalities:
-                if persName in seen:
-                    dupes.add(persName)
-                else:
-                    seen.add(persName)
+        dupes = get_personality_names()
+        for n in set(get_personality_names()):
+            dupes.remove(n)
+        if len(dupes) > 0:
             raise Exception('Duplicate personality name(s): {}'
                             .format(', '.join(dupes)))
         
@@ -128,6 +129,11 @@ class Personality():
         return self.update_dict
 
     def modify_hdudictlist(self, hdudictlist):
+        """Modify hdudictlist IN-PLACE to reflect updates formed from 
+        Personality"""
+        if len(self.update_dict) == 0:
+            make_update_dict(self, hdudictlist)
+
         for idx,hdudict in self.update_dict.items():
             if idx < len(hdudictlist):
                 for k,v in self.update_dict[idx].items():
