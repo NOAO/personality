@@ -46,6 +46,7 @@ def hdudictlist(fitsfile):
 class TestApplyPersonalies(unittest.TestCase):
 
     @skip('input file not valid')
+    #ValueError: time data '2015-07-09' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_bok23m_90prime(self):
         fits_name = 'test-data/bok23m-90prime/d7212.0062.fits.fz'
         pers_name = 'bok23m-90prime'
@@ -57,6 +58,7 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
 
     @skip('input file not valid')
+    #ValueError: time data '2014-12-26' does not match format '%Y-%m-%dT%H:%M:%S.%f'    
     def test_ct13m_andicam(self):
         fits_name = 'test-data/ct13m-andicam/ir141225.0179.fits.fz'
         pers_name = 'ct13m-andicam'
@@ -68,14 +70,14 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
         
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     def test_ct15m_echelle(self):
-        fits_name = 'test-data/ct15m-echelle/chi150724.1000.fits.fz'
+        fits_name = 'test-data/ct15m-echelle/FIXED_chi150724.1000.fits.fz'
         pers_name = 'ct15m-echelle'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
@@ -116,14 +118,14 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     def test_kp4m_newfirm(self):
-        fits_name = 'test-data/kp4m-newfirm/nhs_2015_n04_319685.fits.fz'
+        fits_name = 'test-data/kp4m-newfirm/FIXED_nhs_2015_n04_319685.fits.fz'
         pers_name = 'kp4m-newfirm'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
@@ -139,6 +141,7 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
         
     @skip('input file not valid')
+    #ValueError: time data '2014-12-16' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_osiris(self):
         fits_name = 'test-data/soar-osiris/SO2014B-015_1215.0188.fits.fz'
         pers_name = 'soar-osiris'
@@ -150,8 +153,9 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
 
     @skip('input file not valid')
+    #ValueError: time data '2016-11-02' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_sami(self):
-        fits_name = 'test-data/soar-sami/SO2016B-015.013.fits.fz'
+        fits_name = 'test-data/soar-sami/FIXED_SO2016B-015.013.fits.fz'
         pers_name = 'soar-sami'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
@@ -161,8 +165,9 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
 
     @skip('input file not valid')
+    #ValueError: time data '2014-11-27' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_soi(self):
-        fits_name = 'test-data/soar-soi/test.027.fits.fz'
+        fits_name = 'test-data/soar-soi/FIXED_test.027.fits.fz'
         pers_name = 'soar-soi'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
@@ -180,23 +185,25 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     def test_wiyn_bench(self):
-        fits_name = 'test-data/wiyn-bench/24dec_2014.061.fits.fz'
+        fits_name = 'test-data/wiyn-bench/FIXED_24dec_2014.061.fits.fz'
         pers_name = 'wiyn-bench'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     def test_wiyn_whirc(self):
-        fits_name = 'test-data/wiyn-whirc/obj_355.fits.fz'
+        fits_name = 'test-data/wiyn-whirc/FIXED_obj_355.fits.fz'
         pers_name = 'wiyn-whirc'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
