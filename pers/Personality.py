@@ -7,8 +7,8 @@ import astropy.io.fits as pyfits
 # Local packages
 #!from personality.personalities import personalities
 #!import personality.hdr_decorators as hd
-from personalities import personalities
-import hdr_decorators as hd
+from pers.personalities import personalities
+import pers.hdr_decorators as hd
 
 def get_personality_names():
     return [persName for (persName,persDict) in personalities]
@@ -132,7 +132,7 @@ class Personality():
         """Modify hdudictlist IN-PLACE to reflect updates formed from 
         Personality"""
         if len(self.update_dict) == 0:
-            make_update_dict(self, hdudictlist)
+            self.make_update_dict(hdudictlist)
 
         for idx,hdudict in self.update_dict.items():
             if idx < len(hdudictlist):

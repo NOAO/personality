@@ -1,10 +1,13 @@
 # Python Library
+from unittest import skip
 import unittest
 from collections import OrderedDict
+from pprint import pformat
 # External packages
 import astropy.io.fits as pyfits
 # Local Packages
-from Personality import Personality
+from pers.Personality import Personality
+import expected as exp
 
 def hdudictlist(fitsfile):
     """Read HDU headers into list of python dicts.  
@@ -36,6 +39,7 @@ def hdudictlist(fitsfile):
 
 
 class TestApplyPersonalies(unittest.TestCase):
+    @skip('input file not valid')
     def test_wiyn_whirc(self):
         fits_name = 'test-data/20110101/wiyn-whirc/obj_355.fits.fz'
         pers_name = 'wiyn-whirc'
@@ -44,6 +48,17 @@ class TestApplyPersonalies(unittest.TestCase):
         pers.modify_hdudictlist(hdl)
         expected = []
         self.assertEqual(hdl, expected,'Actual to Expected')
+
+    def test_kp4m_mosaic3(self):
+        fits_name = 'test-data/20160314/kp4m-mosaic3/mos3.75870.fits.fz'
+        pers_name = 'kp4m-mosaic3'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        #print('DBG: kp4m-mosaic3 hdl={}'.format(pformat(hdl)))
+        expected = exp.kp4m_mosaic3
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
         
 
 if __name__ == '__main__':

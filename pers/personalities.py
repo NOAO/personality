@@ -14,8 +14,8 @@ still retained in this library. (for historical reasons only)
 
 """
 
-#!import personality.hdr_funcs as hf
-import hdr_funcs as hf
+import pers.hdr_funcs as hf
+#!import hdr_funcs as hf
 
 
 # from: sandbox/tada-cli/personalities/*/*.yaml

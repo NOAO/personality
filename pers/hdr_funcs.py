@@ -17,7 +17,7 @@ All functions have the same signature.
 # Grouped by OUTPUT Keyword
 
 import logging
-from hdr_decorators import inkws, outkws
+from pers.hdr_decorators import inkws, outkws
 
 
 #########################
