@@ -3,16 +3,13 @@ from unittest import skip
 import unittest
 from collections import OrderedDict
 from pprint import pformat
+import warnings
 # External packages
 import astropy.io.fits as pyfits
 # Local Packages
 from pers.Personality import Personality
 import expected as exp
 
-
-import warnings
-warnings.filterwarnings("ignore", message="numpy.dtype size changed")
-warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 
 def hdudictlist(fitsfile):
     """Read HDU headers into list of python dicts.  
@@ -44,6 +41,11 @@ def hdudictlist(fitsfile):
 
 
 class TestApplyPersonalies(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+        
 
     @skip('input file not valid')
     #ValueError: time data '2015-07-09' does not match format '%Y-%m-%dT%H:%M:%S.%f'
@@ -192,7 +194,7 @@ class TestApplyPersonalies(unittest.TestCase):
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
