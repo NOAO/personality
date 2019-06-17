@@ -45,6 +45,50 @@ def hdudictlist(fitsfile):
 
 class TestApplyPersonalies(unittest.TestCase):
 
+    @skip('input file not valid')
+    def test_bok23m_90prime(self):
+        fits_name = 'test-data/bok23m-90prime/d7212.0062.fits.fz'
+        pers_name = 'bok23m-90prime'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
+    @skip('input file not valid')
+    def test_ct13m_andicam(self):
+        fits_name = 'test-data/ct13m-andicam/ir141225.0179.fits.fz'
+        pers_name = 'ct13m-andicam'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+        
+
+    @skip('input file not valid')
+    def test_ct15m_echelle(self):
+        fits_name = 'test-data/ct15m-echelle/chi150724.1000.fits.fz'
+        pers_name = 'ct15m-echelle'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
+    def test_ct4m_arcoiris(self):
+        fits_name = 'test-data/ct4m-arcoiris/SPEC_ARC1724.fits.fz'
+        pers_name = 'ct4m-arcoiris'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
     def test_ct4m_cosmos(self):
         fits_name = 'test-data/ct4m-cosmos/n2.25522.fits.fz'
         pers_name = 'ct4m-cosmos'
@@ -55,6 +99,25 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
+    def test_ct4m_decam(self):
+        fits_name = 'test-data/ct4m-decam/DECam_00482540.fits.fz'
+        pers_name = 'ct4m-decam'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
+    def test_kp09m_hdi(self):
+        fits_name = 'test-data/kp09m-hdi/c7015t0267b00.fits.fz'
+        pers_name = 'kp09m-hdi'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
 
     def test_kp4m_kosmos(self):
         fits_name = 'test-data/kp4m-kosmos/a.20152.fits.fz'
