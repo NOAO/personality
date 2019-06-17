@@ -3,8 +3,8 @@ from collections import OrderedDict
 # All Personality Names from pers/personalities.py :
 #    #bok23m-90prime
 #    ct09m-ccd_imager
-#    #ct13m-andic
-#    ct15m-chiron
+#    #ct13m-andicam
+#    ct15m-chiron    #
 #    #ct15m-echelle
 #    #ct4m-arcoiris
 ##   ct4m-cosmos
@@ -14,8 +14,8 @@ from collections import OrderedDict
 #    #kp09m-hdi
 ##   kp4m-kosmos
 ##   kp4m-mosaic3
-#    kp4m-mosaic_1_1
-#    kp4m-newfir
+#    kp4m-mosaic_1_1  #
+#    kp4m-newfirm
 #    ops-fakearcoiris
 #    overwrite
 #    pipeline
@@ -111,9 +111,7 @@ he = { # Header Examples for use with each personality
               ('SHIELD', 77.55),
               ('PRESSURE', 1.53e-06)])],
 
-    'ct4m-cosmos': [
-        OrderedDict([
-            ('NEXTEND', 2),
+    'ct4m-cosmos': [OrderedDict([('NEXTEND', 2),
               ('FILENAME', 'n2.25522.fits'),
               ('OBJECT', 'qsostripe19'),
               ('OBSTYPE', 'object'),
@@ -210,13 +208,7 @@ he = { # Header Examples for use with each personality
               ('KSTEMP3', -10),
               ('KSTEMP4', 11.1),
               ('KSCOLFOC', 499.980011),
-              ('KSCOLZRO', 500),
-              ('DTINSTRU', 'cosmos'),
-              ('DTSITE', 'ct'),
-              ('DTTELESC', 'ct4m'),
-              ('PROCTYPE', 'raw'),
-              ('PRODTYPE', 'image'),
-              ('DTCALDAT', '2015-07-04')]),
+              ('KSCOLZRO', 500)]),
  OrderedDict([('XTENSION', 'IMAGE'),
               ('NAXIS1', 210),
               ('NAXIS2', 4096),
