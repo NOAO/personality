@@ -24,7 +24,6 @@ Personalities contain three sections: "options", "calchdr", and "params":
    to the Dome header to get an Archive header.
 1. PARAMS are specialized controls used by ingest.  Mostly not used.
 
-
 ## How a Personality is Applied to a FITS File Header
 The application of Personality is different under NATICA than
 TADA/LSA.  Here the Personality.make_update_dict() method does extra
@@ -40,6 +39,7 @@ new (or changed) FITS header content coming from the Domes.  There are
 two files OPS is intended to modify:
 1. `hdr_funcs.py`
 1. `personalities.py`
+1. (`tests.py`) : Unit Testing for Personalties
 
 Each of these files contains comments describing how they should be
 changed. Generally, OPS will only add a section to `personalities.py`
