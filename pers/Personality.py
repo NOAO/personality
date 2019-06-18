@@ -110,7 +110,7 @@ class Personality():
             # overwrite with explicit fields from personality
             hduidxdict[kwhdu.get(k,0)][k] = v
             
-        flat  = dict()
+        flat  = dict() # flat[fitsKeyword] = val
         for k in kwset:
             if k in hduidxdict[kwhdu.get(k,0)]:
                 flat[k] = hduidxdict[kwhdu.get(k,0)][k]
@@ -119,6 +119,8 @@ class Personality():
         logging.debug('Flat= {}'.format(flat))
         for calcfunc in self.functions():
             newflat = calcfunc(flat)
+            flat.update(newflat)
+            #flat = calcfunc(flat)  # update FLAT for subsequent FUNCS
             logging.info('Ran hdrfunc: {}=>{}'
                          .format(calcfunc.__name__, newflat))
             # Update

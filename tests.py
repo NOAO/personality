@@ -47,7 +47,7 @@ class TestApplyPersonalies(unittest.TestCase):
         warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
         
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     #ValueError: time data '2015-07-09' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_bok23m_90prime(self):
         fits_name = 'test-data/bok23m-90prime/d7212.0062.fits.fz'
@@ -55,19 +55,19 @@ class TestApplyPersonalies(unittest.TestCase):
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     #ValueError: time data '2014-12-26' does not match format '%Y-%m-%dT%H:%M:%S.%f'    
     def test_ct13m_andicam(self):
-        fits_name = 'test-data/ct13m-andicam/ir141225.0179.fits.fz'
+        fits_name = 'test-data/ct13m-andicam/FIXED_ir141225.0179.fits.fz'
         pers_name = 'ct13m-andicam'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
@@ -142,7 +142,7 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
-    @skip('input file not valid')
+    #@skip('input file not valid')
     #ValueError: time data '2014-12-16' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_osiris(self):
         fits_name = 'test-data/soar-osiris/SO2014B-015_1215.0188.fits.fz'
@@ -150,11 +150,11 @@ class TestApplyPersonalies(unittest.TestCase):
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     #ValueError: time data '2016-11-02' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_sami(self):
         fits_name = 'test-data/soar-sami/FIXED_SO2016B-015.013.fits.fz'
@@ -162,11 +162,11 @@ class TestApplyPersonalies(unittest.TestCase):
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('input file not valid')
+    #@skip('input file not valid')
     #ValueError: time data '2014-11-27' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_soi(self):
         fits_name = 'test-data/soar-soi/FIXED_test.027.fits.fz'
@@ -174,7 +174,7 @@ class TestApplyPersonalies(unittest.TestCase):
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
