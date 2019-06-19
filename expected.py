@@ -1622,9 +1622,7 @@ he = { # Header Examples for use with each personality
               ('CD1_2', 0.0),
               ('CD2_2', 0.29)])],
 
-    'ct4m-decam': [
-        OrderedDict([
-            ('NEXTEND', 70),
+    'ct4m-decam': [OrderedDict([('NEXTEND', 70),
               ('PROCTYPE', 'raw'),
               ('PRODTYPE', 'image'),
               ('DETSIZE', '[1:29400,1:29050]'),

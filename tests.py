@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 # Python Library
 from unittest import skip
 import unittest
@@ -47,8 +48,6 @@ class TestApplyPersonalies(unittest.TestCase):
         warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
         
 
-    #@skip('input file not valid')
-    #ValueError: time data '2015-07-09' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_bok23m_90prime(self):
         fits_name = 'test-data/bok23m-90prime/d7212.0062.fits.fz'
         pers_name = 'bok23m-90prime'
@@ -59,8 +58,18 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
-    #ValueError: time data '2014-12-26' does not match format '%Y-%m-%dT%H:%M:%S.%f'    
+
+    @skip('no sample file provided')
+    def test_ct09m_ccd_imager(self):
+        fits_name = 'test-data/ct09m-ccd_imager/foo.fz'
+        pers_name = 'ct09m-ccd_imager'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+        
     def test_ct13m_andicam(self):
         fits_name = 'test-data/ct13m-andicam/FIXED_ir141225.0179.fits.fz'
         pers_name = 'ct13m-andicam'
@@ -71,8 +80,17 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
-
-    #@skip('input file not valid')
+    @skip('no sample file provided')
+    def test_ct15m_chiron(self):
+        fits_name = 'test-data/ct15m-chiron/FOO.fz'
+        pers_name = 'ct15m-chiron'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+    
     def test_ct15m_echelle(self):
         fits_name = 'test-data/ct15m-echelle/FIXED_chi150724.1000.fits.fz'
         pers_name = 'ct15m-echelle'
@@ -101,6 +119,24 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
+    def test_ct4m_decam(self):
+        fits_name = 'test-data/ct4m-decam/DECam_00482540.fits.fz'
+        pers_name = 'ct4m-decam'
+        hdl = hdudictlist(fits_name)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+        
+    def test_kp09m_hdi(self):
+        fits_name = 'test-data/kp09m-hdi/c7015t0267b00.fits.fz'
+        pers_name = 'kp09m-hdi'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
     def test_kp4m_kosmos(self):
         fits_name = 'test-data/kp4m-kosmos/a.20152.fits.fz'
         pers_name = 'kp4m-kosmos'
@@ -108,6 +144,17 @@ class TestApplyPersonalies(unittest.TestCase):
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
         #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        expected = exp.he.get(pers_name,dict())
+        self.assertEqual(hdl, expected,'Actual to Expected')
+
+    @skip('no sample file provided')
+    def test_kp4m_mosaic_1_1(self):
+        fits_name = 'test-data/kp4m-mosaic_1_1/mos3.75870.fits.fz'
+        pers_name = 'kp4m-mosaic_1_1'
+        hdl = hdudictlist(fits_name)
+        pers = Personality(pers_name)
+        pers.modify_hdudictlist(hdl)
+        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
@@ -120,7 +167,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
     def test_kp4m_newfirm(self):
         fits_name = 'test-data/kp4m-newfirm/FIXED_nhs_2015_n04_319685.fits.fz'
         pers_name = 'kp4m-newfirm'
@@ -142,8 +188,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
-    #@skip('input file not valid')
-    #ValueError: time data '2014-12-16' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_osiris(self):
         fits_name = 'test-data/soar-osiris/SO2014B-015_1215.0188.fits.fz'
         pers_name = 'soar-osiris'
@@ -154,8 +198,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
-    #ValueError: time data '2016-11-02' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_sami(self):
         fits_name = 'test-data/soar-sami/FIXED_SO2016B-015.013.fits.fz'
         pers_name = 'soar-sami'
@@ -166,8 +208,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
-    #ValueError: time data '2014-11-27' does not match format '%Y-%m-%dT%H:%M:%S.%f'
     def test_soar_soi(self):
         fits_name = 'test-data/soar-soi/FIXED_test.027.fits.fz'
         pers_name = 'soar-soi'
@@ -187,7 +227,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
     def test_wiyn_bench(self):
         fits_name = 'test-data/wiyn-bench/FIXED_24dec_2014.061.fits.fz'
         pers_name = 'wiyn-bench'
@@ -198,7 +237,6 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    #@skip('input file not valid')
     def test_wiyn_whirc(self):
         fits_name = 'test-data/wiyn-whirc/FIXED_obj_355.fits.fz'
         pers_name = 'wiyn-whirc'
