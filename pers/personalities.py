@@ -113,11 +113,11 @@ personalities = [
                   'PROCTYPE': 'raw'},
       'params': {}}),
 
-#!    ('debug',                                           # PersName, Test?=no
+#!    ('debug',                                           
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'jobid_type': 'seconds', 'source': 'dome'}}),
 #!
-#!    ('dry-run',                                         # PersName, Test?=no
+#!    ('dry-run',                                         
 #!     {'calchdr': [],  'options': {},
 #!      'params': {'dry_run': 'yes', 'test_resubmit': 1}}),
 
@@ -168,38 +168,38 @@ personalities = [
                   'PRODTYPE': 'image'},
       'params': {}}),
 
-#!    ('ops-fakearcoiris',                                # PersName, Test?=no
+#!    ('ops-fakearcoiris',                                
 #!     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
 #!      'options': {'PROCTYPE': 'raw', 'PRODTYPE': 'image'},
 #!      'params': {'OPS_PREAPPLY_UPDATE': 'yes',
 #!                 'jobid_type': 'obsmicro'}}),
 #!
-#!    ('overwrite',                                       # PersName, Test?=no
+#!    ('overwrite',                                       
 #!     {'calchdr': [],
 #!      'options': {},
 #!      'params': {'test_resubmit': 1}}),
 #!
-#!    ('pipeline',                                        # PersName, Test?=no
+#!    ('pipeline',                                        
 #!     {'calchdr': [],
 #!      'options': {'DTSUBMIT': 'Q20160126'},
 #!      'params': {'source': 'pipeline'}}),
 #!
-#!    ('pipeline-90prime',                                # PersName, Test?=no
+#!    ('pipeline-90prime',                                
 #!     {'calchdr': [],
 #!      'options': None,
 #!      'params': {'source': 'pipeline'}}),
 #!
-#!    ('pipeline-dec',                                    # PersName, Test?=no
+#!    ('pipeline-dec',                                    
 #!     {'calchdr': [],
 #!      'options': None,
 #!      'params': {'source': 'pipeline'}}),
 #!
-#!    ('pipeline-mosaic3',                                # PersName, Test?=no
+#!    ('pipeline-mosaic3',                                
 #!     {'calchdr': [],
 #!      'options': None,
 #!      'params': {'source': 'pipeline'}}),
 #!
-#!    ('smoke',                                           # PersName, Test?=no
+#!    ('smoke',                                           
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'job_tag': 'TADASMOKE', 'test_resubmit': 2}}),
 
