@@ -59,14 +59,13 @@ class TestApplyPersonalies(unittest.TestCase):
         self.assertEqual(hdl, expected,'Actual to Expected')
 
 
-    @skip('no sample file provided')
     def test_ct09m_ccd_imager(self):
-        fits_name = 'test-data/ct09m-ccd_imager/foo.fz'
+        fits_name = 'test-data/ct09m-ccd_imager/FIX_20160818.09.136.fits.fz'
         pers_name = 'ct09m-ccd_imager'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
@@ -80,14 +79,14 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
         
-    @skip('no sample file provided')
+    #@skip('no sample file provided')
     def test_ct15m_chiron(self):
-        fits_name = 'test-data/ct15m-chiron/FOO.fz'
+        fits_name = 'test-data/ct15m-chiron/FIX_chi170717.1304.fits.fz'
         pers_name = 'ct15m-chiron'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
     
@@ -147,14 +146,14 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
-    @skip('no sample file provided')
+    #@skip('no sample file provided')
     def test_kp4m_mosaic_1_1(self):
-        fits_name = 'test-data/kp4m-mosaic_1_1/mos3.75870.fits.fz'
+        fits_name = 'test-data/kp4m-mosaic_1_1/n1.65961.fits.fz'
         pers_name = 'kp4m-mosaic_1_1'
         hdl = hdudictlist(fits_name)
         pers = Personality(pers_name)
         pers.modify_hdudictlist(hdl)
-        print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
+        #print('DBG-pers: {} hdl={}'.format(pers_name, pformat(hdl)))
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
 
