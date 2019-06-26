@@ -90,6 +90,8 @@ class TestApplyPersonalies(unittest.TestCase):
         expected = exp.he.get(pers_name,dict())
         self.assertEqual(hdl, expected,'Actual to Expected')
     
+    @skip('No clean example available')
+    # OBSID keyword in an "eschelle" instrument refers to a "chiron" instrument.
     def test_ct15m_echelle(self):
         fits_name = 'test-data/ct15m-echelle/FIXED_chi150724.1000.fits.fz'
         pers_name = 'ct15m-echelle'
