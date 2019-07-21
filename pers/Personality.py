@@ -145,7 +145,9 @@ class Personality():
                         hdudictlist[0][k] = v
                         
     def modify_fits(self, orig_fits_fname, new_fits_fname):
+        logging.debug('modify_fits({},{})'.format(orig_fits_fname, new_fits_fname))
         with pyfits.open(orig_fits_fname) as hdulist:
+            #!hdulist[0].header.update(self.update_dict)
             for idx,hdudict in self.update_dict.items():
                 if idx < len(hdulist):
                     for k,v in self.update_dict[idx].items():
@@ -153,7 +155,6 @@ class Personality():
                             hdulist[idx].header[k] = v
                         else:
                             hdulist[0].header[k] = v
-            #!hdulist[0].header.update(self.update_dict)
             hdulist.writeto(new_fits_fname, output_verify='fix')
         return new_fits_fname
         
