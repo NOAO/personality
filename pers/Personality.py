@@ -120,7 +120,6 @@ class Personality():
         for calcfunc in self.functions():
             newflat = calcfunc(flat)
             flat.update(newflat)
-            #flat = calcfunc(flat)  # update FLAT for subsequent FUNCS
             logging.info('Ran hdrfunc: {}=>{}'
                          .format(calcfunc.__name__, newflat))
             # Update
