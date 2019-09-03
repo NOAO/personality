@@ -144,7 +144,7 @@ class Personality():
                         hdudictlist[0][k] = v
                         
     def modify_fits(self, orig_fits_fname, new_fits_fname):
-        logging.debug('modify_fits({},{})'.format(orig_fits_fname, new_fits_fname))
+        logging.debug(f'modify_fits({orig_fits_fname},{new_fits_fname})'
         with pyfits.open(orig_fits_fname) as hdulist:
             #!hdulist[0].header.update(self.update_dict)
             for idx,hdudict in self.update_dict.items():
