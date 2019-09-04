@@ -126,7 +126,7 @@ class Personality():
             for k,v in newflat.items():
                 hduidxdict[kwhdu.get(k,0)][k] = v                
         self.update_dict = hduidxdict
-        logging.debug('update_dict={}'.format(pformat(dict(self.update_dict))))
+        logging.debug(f'update_dict={pformat(dict(self.update_dict))}')
         return self.update_dict
 
     def modify_hdudictlist(self, hdudictlist):
@@ -144,7 +144,7 @@ class Personality():
                         hdudictlist[0][k] = v
                         
     def modify_fits(self, orig_fits_fname, new_fits_fname):
-        logging.debug(f'modify_fits({orig_fits_fname},{new_fits_fname})'
+        logging.debug(f'modify_fits({orig_fits_fname},{new_fits_fname})')
         with pyfits.open(orig_fits_fname) as hdulist:
             #!hdulist[0].header.update(self.update_dict)
             for idx,hdudict in self.update_dict.items():
