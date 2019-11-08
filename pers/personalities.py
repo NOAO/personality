@@ -122,7 +122,7 @@ personalities = [
 #!      'params': {'dry_run': 'yes', 'test_resubmit': 1}}),
 
     ('kp09m-hdi',                                       # PersName, Test?=no
-     {'calchdr': [hf.DTCALDATfromDATEOBStus],
+     {'calchdr': [hf.DTCALDATfromDATEOBStus, hf.radecstr],
       'options': {'DTINSTRU': 'hdi',
                   'DTSITE': 'kp',
                   'DTTELESC': 'kp09m',

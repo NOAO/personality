@@ -160,3 +160,12 @@ def bokOBSID(orig, **kwargs):
     """hdr function: bokOBSID"""
     return {'OBSID': 'bok23m.'+orig['DATE-OBS'] }
 
+#########################
+### RA, DEC
+###
+@inkws(['RASTRNG','DECSTRNG'])
+@outkws(['RA','DEC'])
+def radecstr(orig, **kwargs):
+    """hdr function: radecstr"""
+    return {'RA': orig['RASTRNG'],'DEC': orig['DECSTRNG'] }
+
