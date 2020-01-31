@@ -116,7 +116,7 @@ class Personality():
                 flat[k] = hduidxdict[kwhdu.get(k,0)][k]
 
         # Apply hdr funcs
-        logging.debug('Flat= {}'.format(flat))
+        #logging.debug('Flat= {}'.format(flat))
         for calcfunc in self.functions():
             newflat = calcfunc(flat)
             flat.update(newflat)
@@ -126,7 +126,7 @@ class Personality():
             for k,v in newflat.items():
                 hduidxdict[kwhdu.get(k,0)][k] = v                
         self.update_dict = hduidxdict
-        logging.debug(f'update_dict={pformat(dict(self.update_dict))}')
+        #logging.debug(f'update_dict={pformat(dict(self.update_dict))}')
         return self.update_dict
 
     def modify_hdudictlist(self, hdudictlist):
