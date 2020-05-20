@@ -26,6 +26,9 @@ class NoPersonalityName(Exception):
 #!                hdudict[k] = v
 #!    return hdudict
 
+# InstVars: persdict, persName, update_dict, kwset
+# Methods: name, options, params, param, functions,
+#    make_update_dict, modify_hdudictlist, modify_fits
 class Personality():
     
     def __init__(self, persName):
