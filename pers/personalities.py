@@ -23,6 +23,16 @@ import pers.hdr_funcs as hf
 
 # [(persName, dict(calchdr=[hdrfunc,...], options=dict(), params=dict())), ...]
 personalities = [
+    ('legacysurvey',
+     {'options': {'DTINSTRU': 'whirc',
+                  'DTTELESC': 'wiyn',
+                  'DTSITE': 'kp',
+                  'PROCTYPE': 'raw',
+                  'DTACQNAM': 'NONE',
+                  'DATE-OBS': '1900-01-31',
+                  'DTCALDAT': '1900-01-31',
+                  },
+      'params': {}}),
     ('bok23m-90prime',                                  # PersName, Test?=yes
      {'calchdr': [hf.IMAGTYPEtoOBSTYPE,
                   hf.addTimeToDATEOBS,
