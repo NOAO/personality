@@ -193,22 +193,22 @@ personalities = [
 #!     {'calchdr': [],
 #!      'options': {'DTSUBMIT': 'Q20160126'},
 #!      'params': {'source': 'pipeline'}}),
-#!
-#!    ('pipeline-90prime',                                
-#!     {'calchdr': [],
-#!      'options': None,
-#!      'params': {'source': 'pipeline'}}),
-#!
-#!    ('pipeline-dec',                                    
-#!     {'calchdr': [],
-#!      'options': None,
-#!      'params': {'source': 'pipeline'}}),
-#!
-#!    ('pipeline-mosaic3',                                
-#!     {'calchdr': [],
-#!      'options': None,
-#!      'params': {'source': 'pipeline'}}),
-#!
+
+    ('pipeline-90prime',                                
+     {'calchdr': [],
+      'options': {},
+      'params': {'source': 'pipeline'}}),
+
+    ('pipeline-decam',                                    
+     {'calchdr': [],
+      'options': {},
+      'params': {'source': 'pipeline'}}),
+
+    ('pipeline-mosaic3',                                
+     {'calchdr': [],
+      'options': {},
+      'params': {'source': 'pipeline'}}),
+
 #!    ('smoke',                                           
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'job_tag': 'TADASMOKE', 'test_resubmit': 2}}),
@@ -273,6 +273,17 @@ personalities = [
                   'PROCTYPE': 'raw',
                   'PRODTYPE': 'image'},
       'params': {}}),
+
+    ('soar-triplespec',                                   # PersName, Test?=yes
+     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
+      'options': {'DTINSTRU': 'triplespec',
+                  'DTSITE': 'cp',
+                  'DTTELESC': 'soar',
+                  'PROCTYPE': 'raw',
+                  'PRODTYPE': 'image'},
+      'params': {'OPS_PREAPPLY_UPDATE': 'yes',
+                 'jobid_type': 'obsmicro'}}),
+
 
     ('wiyn-bench',                                      # PersName, Test?=yes
      {'calchdr': [hf.IMAGTYPEtoOBSTYPE,
