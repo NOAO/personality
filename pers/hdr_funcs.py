@@ -124,6 +124,17 @@ def PROPIDplusCentury(orig, **kwargs):
     """Add missing century"""
     return {'DTPROPID': '20' + orig.get('PROPID','NA').strip('"') }
 
+@inkws(['PROPID'])
+@outkws(['DTPROPID'])
+def PROPIDtoDT(orig, **kwargs):
+    """Copy PROPID to DTPROPIOD"""
+    if 'DTPROPID' in orig:
+        return {'DTPROPID': orig.get('DTPROPID') }
+    else:
+        if 'PROPID' in orig:
+            return {'DTPROPID': orig.get('PROPID') }
+        else:
+            return {}
 
 #########################
 ### DTINSTR

@@ -123,6 +123,14 @@ personalities = [
                   'PROCTYPE': 'raw'},
       'params': {}}),
 
+    ('ct4m-decam2',                                      # PersName, Test?=no
+     {'calchdr': [hf.DTCALDATfromDATEOBSchile, hf.PROPIDtoDT],
+      'options': {'DTINSTRU': 'decam',
+                  'DTSITE': 'ct',
+                  'DTTELESC': 'ct4m',
+                  'PROCTYPE': 'raw'},
+      'params': {}}),
+    
 #!    ('debug',                                           
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'jobid_type': 'seconds', 'source': 'dome'}}),
