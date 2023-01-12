@@ -189,7 +189,7 @@ personalities = [
     ('ct4m-newfirm',                                    # PersName, Test?=yes
      {'calchdr': [hf.addTimeToDATEOBS, 
                  hf.DTCALDATfromDATEOBSchile,
-                 hf.OBSTYPEtoOBSTYPE],
+                 hf.OBSTYPtoOBSTYPE],
       'options': {'DTINSTRU': 'newfirm',
                   'DTSITE': 'ct',
                   'DTTELESC': 'ct4m',
