@@ -186,7 +186,7 @@ personalities = [
                   'PRODTYPE': 'image'},
       'params': {}}),
 
-    ('ct4m-newfirm',                                    # PersName, Test?=yes
+    ('ct4m-newfirm',                                    # PersName, Test?=no
      {'calchdr': [hf.addTimeToDATEOBS, 
                  hf.DTCALDATfromDATEOBSchile,
                  hf.OBSTYPtoOBSTYPE],
