@@ -186,6 +186,15 @@ personalities = [
                   'PRODTYPE': 'image'},
       'params': {}}),
 
+    ('ct4m-newfirm',                                    # PersName, Test?=yes
+     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
+      'options': {'DTINSTRU': 'newfirm',
+                  'DTSITE': 'ct',
+                  'DTTELESC': 'ct4m',
+                  'PROCTYPE': 'raw',
+                  'PRODTYPE': 'image'},
+      'params': {}}),
+
 #!    ('ops-fakearcoiris',                                
 #!     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
 #!      'options': {'PROCTYPE': 'raw', 'PRODTYPE': 'image'},
