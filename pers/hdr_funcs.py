@@ -160,6 +160,11 @@ def IMAGTYPEtoOBSTYPE(orig, **kwargs):
     """hdr function: IMAGTYPEtoOBSTYPE"""
     return {'OBSTYPE': orig['IMAGETYP']  }
 
+@inkws(['OBSTYP'])
+@outkws(['OBSTYPE'])
+def OBSTYPtoOBSTYPE(orig, **kwargs):
+    """hdr function: OBSTYPtoOBSTYPE"""
+    return {'OBSTYPE': orig['OBSTYP']  }
 
 #########################
 ### OBSID
