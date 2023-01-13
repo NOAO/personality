@@ -197,6 +197,25 @@ personalities = [
                   'PRODTYPE': 'image'},
       'params': {}}),
 
+     ('soar-ghts_red_imager',                                    # PersName, Test?=no
+     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
+      'options': {'DTINSTRU': 'ghts_red_imager',
+                  'DTSITE': 'cp',
+                  'DTTELESC': 'soar',
+                  'PROCTYPE': 'raw',
+                  'PRODTYPE': 'image'},
+      'params': {}}),
+
+     ('soar-ghts_blue_imager',                                    # PersName, Test?=no
+     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
+      'options': {'DTINSTRU': 'ghts_blue_imager',
+                  'DTSITE': 'cp',
+                  'DTTELESC': 'soar',
+                  'PROCTYPE': 'raw',
+                  'PRODTYPE': 'image'},
+      'params': {}}),
+
+
 #!    ('ops-fakearcoiris',                                
 #!     {'calchdr': [hf.DTCALDATfromDATEOBSchile],
 #!      'options': {'PROCTYPE': 'raw', 'PRODTYPE': 'image'},
