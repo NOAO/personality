@@ -199,7 +199,8 @@ personalities = [
 
      ('soar-ghts_red',                                    # PersName, Test?=no
      {'calchdr': [hf.DTCALDATfromDATEOBSchile],
-      'options': {'DTINSTRU': 'ghts_red',
+      'options': {'AAPROPID': 'soar',
+                  'DTINSTRU': 'ghts_red',
                   'DTSITE': 'cp',
                   'DTTELESC': 'soar',
                   'PROCTYPE': 'raw',
@@ -208,7 +209,8 @@ personalities = [
 
      ('soar-ghts_blue',                                    # PersName, Test?=no
      {'calchdr': [hf.DTCALDATfromDATEOBSchile],
-      'options': {'DTINSTRU': 'ghts_blue',
+      'options': {'AAPROPID': 'soar',
+                  'DTINSTRU': 'ghts_blue',
                   'DTSITE': 'cp',
                   'DTTELESC': 'soar',
                   'PROCTYPE': 'raw',
