@@ -77,7 +77,7 @@ personalities = [
     ('ct15m-chiron',                                    # PersName, Test?=no
      {'calchdr': [hf.IMAGTYPEtoOBSTYPE,
                   hf.DTCALDATfromDATEOBSchile],
-      'options': {'AAPROPID': 'smarts',
+      'options': {'DTPROPID': 'smarts',
                   'DTINSTRU': 'chiron',
                   'DTSITE': 'ct',
                   'DTTELESC': 'ct15m',
@@ -88,7 +88,7 @@ personalities = [
     ('ct15m-echelle',                                   # PersName, Test?=yes
      {'calchdr': [hf.IMAGTYPEtoOBSTYPE,
                   hf.DTCALDATfromDATEOBSchile],
-      'options': {'AAPROPID': 'smarts',
+      'options': {'DTPROPID': 'smarts',
                   'DTINSTRU': 'echelle',
                   'DTSITE': 'ct',
                   'DTTELESC': 'ct15m',
