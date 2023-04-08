@@ -295,6 +295,7 @@ personalities = [
                   'PROCTYPE': 'raw',
                   'PRODTYPE': 'image'},
       'params': {}}),
+# SOAR Spartan doesn't seem to use PROPID so hardwire it
     ('soar-spartan',                                    # PersName, Test?=yes
      {'calchdr': [hf.DTCALDATfromDATEOBSchile,
                   hf.INSTRUMEtoDT,
@@ -302,6 +303,7 @@ personalities = [
       'options': {'DTINSTRU': 'spartan',
                   'DTSITE': 'cp',
                   'DTTELESC': 'soar',
+                  'DTPROPID': 'soar',
                   'PROCTYPE': 'raw',
                   'PRODTYPE': 'image'},
       'params': {}}),
