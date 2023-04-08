@@ -149,6 +149,21 @@ def INSTRUMEtoDT(orig, **kwargs):
     else:
         return {'DTINSTRU': orig['INSTRUME'] }
 
+#########################
+### PROPOSAL
+###
+
+@inkws(['PROPOSAL'])
+@outkws(['PROPID'])
+def PROPOSALtoPROPID(orig, **kwargs):
+    """Copy PROPOSAL to PROPID"""
+    if 'PROPID' in orig:
+        return {'PROPID': orig.get('PROPID') }
+    else:
+        if 'PROPOSAL' in orig:
+            return {'PROPID': orig.get('PROPOSAL') }
+        else:
+            return {}
 
 #########################
 ### OBSTYPE

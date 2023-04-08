@@ -250,8 +250,10 @@ personalities = [
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'job_tag': 'TADASMOKE', 'test_resubmit': 2}}),
 
+# SOAR Goodman fills proposal info into PROPOSAL keyword instead of PROPID
     ('soar-goodman',                                    # PersName, Test?=yes
      {'calchdr': [hf.DTCALDATfromDATEOBSchile,
+                  hf.PROPOSALtoPROPID,
                   hf.INSTRUMEtoDT],
       'options': {'DTINSTRU': 'goodman',
                   'DTSITE': 'cp',
