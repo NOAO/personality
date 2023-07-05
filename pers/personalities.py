@@ -255,6 +255,11 @@ personalities = [
       'options': {},
       'params': {'source': 'pipeline'}}),
 
+    ('pipeline-newfirm',
+     {'calchdr': [],
+      'options': {},
+      'params': {'source': 'pipeline'}}),
+
 #!    ('smoke',                                           
 #!     {'calchdr': [], 'options': {},
 #!      'params': {'job_tag': 'TADASMOKE', 'test_resubmit': 2}}),
