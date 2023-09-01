@@ -22,6 +22,7 @@ from collections import OrderedDict
 #    pipeline-90prime
 #    pipeline-dec
 #    pipeline-mosaic3
+#    pipeline-newfirm
 #    smoke
 ##   soar-goodman
 ##   soar-osiris
