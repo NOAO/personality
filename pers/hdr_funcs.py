@@ -58,6 +58,15 @@ def addTimeToDATEOBS(orig, **kwargs):
         return {'DATE-OBS': orig['DATE-OBS'] + 'T' + orig['TIME-OBS']}
 
 
+@inkws(['DATE-OBS'])
+@outkws(['DATE-OBS'])
+def addTToDATEOBS(orig, **kwargs):
+    if ('T' in orig['DATE-OBS']):
+        return {'DATE-OBS': orig['DATE-OBS']}
+    else:
+        return {'DATE-OBS':datetime.datetime.strptime(orig['DATE-OBS'], '%Y-%m-%d %H:%M:%S.%f').strftime('%Y-%m-%dT%H:%M:%S.%f')}
+
+
 @inkws(['DATE-OBS', 'DATE'])
 @outkws(['ODATEOBS', 'DATE-OBS'])
 def DATEOBSfromDATE(orig, **kwargs):
